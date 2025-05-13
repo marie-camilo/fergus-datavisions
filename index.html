@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HAPPINESS !</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link href="libs/bootstrap-grid.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+</head>
+<body>
+
+<div id="container-progression">
+    <div id="barre-progression"></div>
+</div>
+
+<header>
+    <a href="#welcome" class="logo">JoyMetrics</a>
+    <nav>
+        <ul class="header-right liens-navigation">
+            <li class="hideMobile"><a href="#section1">Section 1</a></li>
+            <li class="hideMobile"><a href="#wave-chart-sec">Section 2</a></li>
+            <li class="hideMobile"><a href="#section2">Section 3</a></li>
+            <li class="hideMobile"><a href="#section3">Section 4</a></li>
+            <li class="hideMobile"><a href="#graphic">Section 5</a></li>
+            <li class="hideMobile"><a href="#section4">Section 6</a></li>
+            <li class="hideMobile"><a href="#section5">Section 7</a></li>
+            <li class="menu-button" onclick="showSidebar()" ><a href="#"></a><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="black"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></li>
+        </ul>
+
+        <script>
+            function showSidebar() {
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'flex'
+            }
+            function hideSidebar() {
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'none'
+            }
+        </script>
+
+        <ul class="sidebar header-right liens-navigation">
+            <li class="hide-button" onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="black "><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="#section1">Section 1</a></li>
+            <li><a href="#wave-chart-sec">Section 2</a></li>
+            <li><a href="#section2">Section 3</a></li>
+            <li><a href="#section3">Section 4</a></li>
+            <li><a href="#graphic">Section 5</a></li>
+            <li><a href="#section4">Section 6</a></li>
+            <li><a href="#section5">Section 7</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div id="welcome">
+
+    <!-- Titre Chargement -->
+    <div class="header">
+        <div class="h1">J</div>
+        <div class="h1">o</div>
+        <div class="h1">y</div>
+        <div class="h1">M</div>
+        <div class="h1">e</div>
+        <div class="h1">t</div>
+        <div class="h1">r</div>
+        <div class="h1">i</div>
+        <div class="h1">c</div>
+        <div class="h1">s</div>
+    </div>
+
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 left-column">
+                    <div class="welcoming">
+                        <h1>Le <span class="highlight">bonheur est une émotion universelle </span> que chacun ressent, bien que sa perception et son expérience diffèrent selon les <span class="highlight">cultures. </span> </h1>
+                        <p>Comment le bonheur est-il perçu dans différentes parties du monde et qu'est-ce qui le rend si unique d'une culture à l'autre ?</p>
+                        <button id="btn-hero" class="btn btn-primary" onclick="location.href='#introduction'">En savoir plus</button>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="introduction">
+    <div class="intro-script">
+        <h2>Definir le bonheur a    travers le monde</h2>
+        <p>Le bonheur à travers le monde peut être défini comme un état subjectif de bien-être, de satisfaction et de contentement qui varie en fonction des cultures, des valeurs sociales, des contextes économiques et des expériences individuelles. Il englobe un ensemble d'éléments liés à la qualité de vie, à la santé mentale et physique, aux relations sociales, à la sécurité, et à l'accomplissement personnel.
+<br> <br>
+            Cependant, le bonheur n'est pas universellement perçu de la même manière : certaines cultures mettent l'accent sur l'épanouissement personnel, tandis que d'autres privilégient l'harmonie sociale, la spiritualité ou la connexion avec la nature. Par exemple, dans les sociétés occidentales, le bonheur est souvent associé à la réussite personnelle, à la liberté individuelle et à l'acquisition de biens matériels, tandis que dans d'autres cultures, comme au Bhoutan, il est davantage lié à des principes de bien-être collectif, de paix intérieure et d'équilibre.
+
+        </p>
+    </div>
+</section>
+
+<section id="waves-parallax">
+    <div class="wave" id="wave1" style="--i:1;"></div>
+    <div class="wave" id="wave2" style="--i:2;"></div>
+    <div class="wave" id="wave3" style="--i:3;"></div>
+    <div class="wave" id="wave4" style="--i:4;"></div>
+</section>
+
+<section id="section1" class="container my-5 section">
+    <div class="boat-wave-container">
+        <img src="img/bateau-vague.png" alt="Bateau et vague" class="boat-wave">
+    </div>
+
+    <div class="row align-items-center" style="height: 100%;">
+        <!-- Colonne gauche avec le globe -->
+        <div class="col-md-6 text-center" style="height: 100%;">
+            <<script src="./js/three.js" defer></script>
+            <script src="./js/globe.js" defer></script>
+            <canvas id="globe" style="width: 100%; height: 100%;"></canvas>
+        </div>
+        <!-- Colonne droite avec le texte -->
+        <div class="col-md-6">
+            <div class="d-flex align-items-center mb-3">
+                <img src="img/panneau.png" class="img-fluid me-3" style="width: 100px; height: 100px;" alt="Panneau">
+                <h2 class="mb-0">L'indice de bonheur à l'echelle globale et continentale</h2>
+            </div>
+            <strong><p>Le classement mondial du bonheur, selon le rapport 2024, révèle que la Finlande maintient sa position de leader avec un indice de bonheur de 7,74, suivie de près par le Danemark et l'Islande.</p></strong>
+            <p>Les pays nordiques, comme la Finlande, le Danemark et l'Islande, dominent le classement mondial du bonheur grâce à une combinaison de facteurs qui favorisent la satisfaction de vie. Ces pays ont des systèmes sociaux solides, un accès égalitaire aux soins de santé, un environnement naturel préservé et une forte confiance en leurs institutions. En revanche, les pays d'Afrique et d'Asie, souvent confrontés à des défis socio-économiques, enregistrent des scores plus bas. En Europe et en Amérique du Nord, les scores sont plus élevés en raison d'un meilleur accès aux ressources et d'une qualité de vie supérieure.</p>
+        </div>
+    </div>
+</section>
+
+<section id="wave-chart-sec" class="container my-5 section">
+    <h2 id="titre-wave-chart">Le bonheur a l'ere des inegalites</h2>
+    <div id="wave-chart" style="width: 100%; height: 400px;"></div>
+
+    <h2  style="font-size: 15px;">Perceptions du bien-etre entre pays riches et pays pauvres</h2>
+    <p>Le bonheur semble être une quête universelle … Pourtant, selon l'endroit où l'on se trouve sur la carte du monde, sa définition change radicalement. Dans les pays riches, il est surtout lié à la réussite personnelle et au confort matériel, comme le montrent les 75 % des Européens qui associent leur bien-être à l’atteinte de leurs objectifs personnels. En revanche, dans les pays pauvres, le bonheur est davantage centré sur la solidarité et les liens communautaires. Au Rwanda ou au Bangladesh, 60 % des habitants considèrent que le bonheur réside dans les relations humaines et la résilience face aux difficultés.</p>
+
+    <strong><p>Il est fascinant de constater que dans ces pays où la pauvreté peut être omniprésente, les gens trouvent encore un sens au bonheur, souvent dans des choses simples : les rires partagés en famille, la satisfaction d'un repas commun, l'espoir et la solidarité. Tandis qu'en Europe du Nord, où la richesse permet une autonomie personnelle plus grande, le bonheur semble parfois plus lié à la recherche d’une pleine réalisation de soi, voire à une forme matérialiste du bonheur.</p></strong>
+
+    <script src="libs/echarts.js" defer></script>
+    <script src="js/wave-chart.js" defer></script>
+</section>
+
+<section id="section2" class="container my-5 section">
+    <div class="row align-items-center mb-4">
+        <div class="col-md-12 d-flex align-items-center">
+            <img src="img/panneau.png" class="img-fluid me-3" style="width: 150px; height: 150px;" alt="Panneau">
+            <h2 class="mb-0">Les facteurs qui influencent <br> le bonheur selon les pays</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 d-flex justify-content-center">
+            <img src="img/influences-bonheur.gif" class="img-fluid" style="height: auto; width: 800px;" alt="Graphiques influences">
+        </div>
+
+        <div class="col-md-6">
+            <div class="mb-3">
+                <h2 class="mb-2" style="font-size: 15px;">L'essentiel n'est pas toujours materiel: l'impact des relations sur le bonheur</h2>
+                <p>Les facteurs influençant le bonheur varient considérablement d'un pays à l'autre, mais certains éléments paraissent tout de même déterminants.</p>
+                <p>Les relations personnelles et émotionnelles (enfants, vie amoureuse, amis) sont de loin les plus influentes, représentant 80% des facteurs de bonheur. Viennent ensuite la santé et le bien-être personnel (75%), qui jouent également un rôle crucial. L'environnement matériel et social (59%) et le contexte socio-économique (45%) influencent le bonheur, mais de manière moins marquée. </p>
+                <strong><p>Ces différences montrent l'importance des liens sociaux et du bien-être individuel, souvent au-delà des aspects matériels ou économiques qui touchent moins directement les expériences quotidiennes de bonheur.</p></strong>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="section3" class="container my-5">
+    <div class="row align-items-center mb-4">
+        <div class="col-md-12 d-flex justify-content-end align-items-center">
+            <h2 class="mb-0">Biais culturels et <br> relation au bonheur</h2>
+            <img src="img/panneau.png" class="img-fluid me-3" style="width: 120px; height: 120px;" alt="Panneau">
+        </div>
+    </div>
+
+    <div class="biais-culturels text-center">
+        <h3 style="text-align: left;">Evaluation du bonheur sur 10</h3>
+        <img src="img/biais-culturels.png" class="img-fluid" style="max-width: 100%; height: auto;" alt="Biais culturels">
+
+        <p>Néanmoins, si les <strong>relations sociales</strong> et le <strong>bien-être individuel</strong> jouent un rôle central dans le <strong>bonheur</strong>, la perception de celui-ci varie fortement en fonction des cultures. <span class="highlight">Ce qui rend heureux dans une région peut être perçu différemment ailleurs.</span></p>
+        <p>Dans les cultures occidentales, le bonheur est souvent synonyme de réussite personnelle et d’émotions positives. À l’inverse, dans de nombreuses cultures asiatiques ou africaines, le bonheur est étroitement lié à l’harmonie sociale, la spiritualité ou la résilience. Ces différences soulignent que <span class="highlight">le bonheur n’est pas une notion universelle et doit être compris dans son contexte culturel.</span></p>
+
+        <strong><p>Ces perspectives variées montrent que les classements mondiaux de bonheur, bien qu'informatifs, peuvent refléter un biais occidental, ne tenant pas toujours compte des conceptions locales de ce qui constitue une "vie heureuse".</p></strong>
+
+        <a href="#section4" class="btn btn-link">
+            <i class="fas fa-arrow-down" style="font-size: 2rem;"></i>
+        </a>
+    </div>
+</section>
+
+<section id="graphic" class="container my-5 section">
+    <h2>Le bonheur : une question de perspective culturelle</h2>
+    <div id="graphic-chart" style="width: 100%; height: 440px;"></div>
+    <script src="js/graphic-chart.js" defer></script>
+    <p>Le bonheur varie selon les régions : en Occident, il est lié à <span class="highlight">la réussite personnelle (75 %)</span>, en Asie à <span class="highlight">l'harmonie sociale et la résilience (68 %)</span>, et en Afrique à <span class="highlight">la spiritualité et les liens communautaires (60 %)</span>. Ces différences sont souvent ignorées dans les classements mondiaux, jugés biaisés par <strong>40 % des répondants</strong> des pays non occidentaux. <strong>82 % des experts</strong> s'accordent à dire que le bonheur est subjectif et contextuel.</p>
+</section>
+
+<section id="section4" class="container my-5 section">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <div class="d-flex align-items-center mb-3">
+                <img src="img/panneau.png" class="img-fluid me-3" style="width: 100px; height: 100px;" alt="Panneau">
+                <h2 class="mb-0" id="titre-francais">Le bonheur et <br> les francais</h2>
+            </div>
+        </div>
+        <div class="col-md-6 text-center">
+            <div id="boussole-fergus"></div>
+            <script>
+                const animation = lottie.loadAnimation({
+                    container: document.getElementById('boussole-fergus'),
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    path: 'json/francais-boussole.json'
+                });
+            </script>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12 col-md-6">
+            <div class="card">
+                <div id="boussole-lottie"></div>
+                <script>
+                    const animationb = lottie.loadAnimation({
+                        container: document.getElementById('boussole-lottie'),
+                        renderer: 'svg',
+                        loop: false,
+                        autoplay: false,
+                        path: 'json/boussole_bonheur.json'
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2  style="font-size: 15px;">Les Francais et leur entourage</h2>
+                    <p>Selon les études, <strong><span class="highlight">85 % des Français</span></strong> attribuent leur bonheur à la qualité de leurs relations avec leur entourage. Famille, amis et partenaires jouent un rôle clé dans leur épanouissement personnel. Ces liens apportent soutien émotionnel, partage et une véritable source de sens dans la vie quotidienne.
+                    </p>
+
+                    <div class="text-end mt-3">
+                        <button id="btn-boussole" class="btn btn-primary">Voir la donnée !</button>
+                        <script>
+                            document.getElementById('btn-boussole').addEventListener('click', function () {
+                                animationb.play(); // Démarrer l'animation
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="section5" class="container my-5 section">
+    <div class="row align-items-center mb-4">
+        <div class="col-md-12 d-flex justify-content-end align-items-center">
+            <h2 class="mb-0">Le bonheur selon le type de <br> communes de residence en France</h2>
+            <img src="img/panneau.png" class="img-fluid me-3" style="width: 120px; height: 120px;" alt="Panneau">
+        </div>
+    </div>
+
+
+    <div class="communes-res text-center">
+        <img src="img/commune-residence.png" class="img-fluid" style="width: 100%; height: auto;" alt="Communes de résidence en France">
+
+        <h2  style="font-size: 15px;">Bonheur sans frontieres : ville, campagne ou metropole </h2>
+        <p>Contrairement aux idées reçues, le lieu de résidence a <strong>un impact limité sur le bonheur des Français.</strong> Les données de l’Insee montrent que la note moyenne de satisfaction reste stable, <span class="highlight">autour de 7 sur 10,</span> quel que soit le type de commune, qu’il s’agisse de zones rurales, de petites villes ou de grandes agglomérations.
+
+            Cela souligne que le bonheur dépend davantage de facteurs individuels, tels que les relations sociales ou la santé, plutôt que du contexte géographique. Partout, les expériences personnelles priment sur l'environnement.</p>
+    </div>
+</section>
+
+<footer class="gradient-footer my-5">
+    <div class="row align-items-center">
+        <div class="col-md-6 text-center">
+            <img src="img/fergus-love.png" class="img-fluid" style="max-width: 50%; height: auto;" alt="Fergus Bonheur">
+        </div>
+        <div class="col-md-6">
+            <div class="d-flex align-items-center mb-3">
+                <h2 class="mb-0">JoyMetrics</h2>
+            </div>
+
+            <div class="footer-explications">
+            <strong><p>JoyMetrics est né d’une idée simple : parler du bonheur de manière universelle tout en y ajoutant une touche personnelle et créative. En deux semaines de sueur, de café et de rebondissements inattendus, j’ai exploré ce qui rend les gens heureux à travers des datavisions ludiques et animées. Mon but ? Montrer que derrière les données brutes se cachent des histoires, des émotions et une grande envie de comprendre ce qui nous unit tous : la quête du bonheur.</p></strong>
+            <p>Et puis il y a Fergus, le hibou mascotte qui m’a inspiré à rendre tout cela un peu plus fun. Avouez, qui refuserait ses conseils ?</p>
+            </div>
+
+        </div>
+    </div>
+
+    <strong><p>CAMILO-MARCHAL Marie - S3D2</p></strong>
+</footer>
+
+<button onclick="topFunction()" id="scrollToTopButton" title="Haut de page"><i class="fas fa-chevron-up"></i></button>
+
+<!--Balises script-->
+
+<!--Fichiers JS-->
+<script src="js/scrolltop.js" type="text/javascript"></script>
+<script src="js/barre-progression.js"></script>
+<script src="js/script.js"></script>
+<script src="js/header.js"></script>
+<script src="js/wave-parallax.js"></script>
+
+<!--Librairies-->
+<script src="https://unpkg.com/split-type"></script>
+
+</body>
+</html>

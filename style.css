@@ -1,0 +1,540 @@
+@font-face {
+    font-family: 'Adelia';
+    src: url('./fonts/ADELIA.otf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html body {
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+h2 {
+    font-family: 'Adelia', sans-serif;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+}
+
+.header .h1 {
+    position: relative;
+    font-family: 'Adelia', sans-serif;
+    font-size: 8vw;
+    line-height: 1.125;
+}
+
+.welcoming {
+    margin-top: 12vh;
+}
+
+#welcome {
+    min-height: 100vh;
+    background-color: #F6F6F6;
+    position: relative;
+}
+
+.left-column {
+    margin-left: -7vh;
+}
+
+#welcome::after {
+    content: '';
+    position: absolute;
+    right: -55vh;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url('img/fergus-welcome.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+#btn-hero {
+    background-color: #ef7728;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+#introduction {
+    min-height: 20vh;
+    text-align: center;
+}
+
+.intro-script {
+    padding: 200px;
+}
+
+#globe {
+    top: 0;
+    left: 0;
+}
+
+/* Section waves-parallax */
+#waves-parallax {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 1; /* Tout derrière */
+    overflow: hidden;
+}
+
+/* Style des vagues */
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 60vh;
+    background: url("./img/wave.png") no-repeat center;
+    background-size: cover;
+    animation: animate 4s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.25s);
+    z-index: 2;
+}
+
+/* Gestion des profondeurs des vagues */
+.wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    background-position-x: 400px;
+}
+
+.wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    background-position-x: 300px;
+}
+
+.wave#wave3 {
+    z-index: 998;
+    opacity: 0.2;
+    background-position-x: 200px;
+}
+
+.wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    background-position-x: 100px;
+}
+
+/* Animation des vagues */
+@keyframes animate {
+    0%, 100% {
+        transform : translateY(0px);
+    }
+    50% {
+        transform : translateY(10px);
+    }
+}
+
+/* Section suivante */
+#section1 {
+    position: relative;
+    min-height: 70vh;
+    padding: 100px 0;
+    z-index: 3;
+}
+
+#section1 .row {
+    min-height: 100%;
+}
+
+#section1 .col-md-6 {
+    min-height: 100%;
+}
+
+.boat-wave-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 170%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.boat-wave {
+    width: 100%;
+    height: auto;
+}
+
+#globe {
+    width: 100%;
+    min-height: 100%;
+}
+
+#titre-wave-chart {
+    z-index: 8;
+}
+
+#wave-chart-sec {
+    min-height: 110vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#section2 {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#section2 .row .col-md-12 {
+    min-height: 35vh;
+}
+
+#section3 {
+    min-height: 135vh;
+}
+
+#section3 .row .col-md-12 {
+    min-height: 28vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.biais-culturels {
+    text-align: center;
+}
+
+.biais-culturels .btn {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #f8c9dc;
+}
+
+.biais-culturels .btn:hover {
+    text-decoration: none;
+    color: #e61c64;
+}
+
+.highlight {
+    background-color: #f8c9dc;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.highlight:hover {
+    background-color: #ccd622;
+}
+
+#section4 {
+    min-height: 120vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#boussole-fergus {
+    margin-top: 20vh;
+}
+
+#section4 .row {
+    width: 100%;
+    justify-content: center;
+}
+
+#section4 .card {
+    margin: 20px 0;
+}
+
+#section4 .d-flex {
+    justify-content: center;
+    text-align: center;
+}
+
+#graphic {
+    min-height: 35vh;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+#section5 {
+    min-height: 140vh;
+}
+
+#section5 .row .col-md-12 {
+    min-height: 30vh;
+}
+
+#section5 .communes-res {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#section5 .communes-res img {
+    margin: 0 auto;
+    display: block;
+}
+
+#section5 .communes-res h2 {
+    margin-top: 12vh;
+}
+
+#section5 .communes-res h3,
+#section5 .communes-res p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gradient-footer {
+    background: linear-gradient(to top, pink, white);
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.gradient-footer h2 {
+    font-size: 2.5rem;
+    text-align: left;
+}
+
+.footer-explications {
+    text-align: left;
+    margin-right: 10vh;
+}
+
+.gradient-footer img {
+    float: right;
+}
+
+#scrollToTopButton {
+    display: block;
+    z-index: 99;
+    transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    width: 50px;
+    height: 50px;
+    padding: 8px;
+    background-color: #e61c64;
+}
+
+#scrollToTopButton i {
+    color: white;
+}
+
+#scrollToTopButton:hover,
+#scrollToTopButton:focus,
+#scrollToTopButton:focus-within {
+    cursor: pointer;
+    background-color: #DEE6F1;
+}
+
+#btn-boussole {
+    background-color: #e61c64;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+#btn-sec3 {
+    background-color: #f8c9dc;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* =================== RESPONSIVE - MOBILE (≤576px) =================== */
+@media (max-width: 576px) {
+    .header {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header .h1 {
+        font-size: 12vw;
+    }
+
+    .welcoming h1 {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left-column {
+        margin-left: 0;
+    }
+
+    #welcome::after {
+        display: none;
+    }
+
+    #introduction,
+    .intro-script,
+    #section1,
+    #wave-chart-sec,
+    #section2,
+    #section3,
+    #graphic,
+    #section4,
+    #section5 {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .intro-script {
+        padding: 1rem;
+    }
+
+    .intro-script h2 {
+        font-size: 1.8rem;
+    }
+
+    .intro-script p {
+        font-size: 1rem;
+        text-align: justify;
+    }
+
+    #waves-parallax {
+        display: none;
+    }
+
+    .boat-wave-container {
+        display: flex;
+        position: relative;
+        width: 100%;
+        margin: 1rem auto;
+    }
+
+    #wave-chart-sec h2 {
+        font-size: 1.5rem;
+    }
+
+    #wave-chart {
+        width: 100%;
+        min-height: 250px;
+    }
+
+    #wave-chart-sec p {
+        font-size: 0.9rem;
+        text-align: justify;
+    }
+
+    .gradient-footer h2 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .footer-explications {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .gradient-footer img {
+        float: none;
+        display: block;
+        margin: 1rem auto;
+    }
+
+    #scrollToTopButton {
+        width: 40px;
+        height: 40px;
+    }
+
+    #scrollToTopButton i {
+        font-size: 1rem;
+    }
+
+    #btn-hero,
+    #btn-boussole,
+    #btn-sec3 {
+        width: 100%;
+        max-width: 300px;
+        margin: 0.5rem auto;
+    }
+}
+
+/* =================== RESPONSIVE - TABLETTE (≤768px) =================== */
+@media (max-width: 768px) {
+    .header {
+        padding: 1em;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header .h1 {
+        font-size: 10vw;
+    }
+
+    .intro-script {
+        padding: 3rem 1rem;
+    }
+
+    #welcome {
+        padding: 2rem 1rem;
+    }
+
+    #section1, #section2, #section3, #section4, #section5 {
+        padding: 2rem 1rem;
+    }
+
+    .footer-explications {
+        margin-right: 2vh;
+    }
+
+    .gradient-footer h2 {
+        font-size: 1.8rem;
+    }
+
+    .gradient-footer img {
+        float: none;
+        display: block;
+        margin: 1rem auto;
+    }
+}
