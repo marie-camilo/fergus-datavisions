@@ -438,13 +438,14 @@ h2 {
     }
 
     .panneau-img {
-        width: 60px;
-        height: 60px;
-        margin-right: 0.75rem !important;
+        width: 120px !important;
+        height: 120px !important;
+        margin-right: 1rem !important;
     }
 
     .titre-francais {
-        font-size: 1.25rem;
+        font-size: 1.3rem;
+        line-height: 1.2;
     }
 
     #globe {
