@@ -82,19 +82,23 @@ h2 {
 }
 
 .intro-script {
-    padding: 200px;
+    padding: 100px 300px;
 }
 
 #globe {
-    top: 0;
-    left: 0;
+    width: 100%;
+    height: auto;
+    max-width: 800px; /* taille max sur grand écran */
+    aspect-ratio: 1 / 1; /* garde un carré parfait */
+    display: block;
+    margin: 0 auto; /* centre horizontalement */
 }
 
 /* Section waves-parallax */
 #waves-parallax {
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: 70vh;
     z-index: 1; /* Tout derrière */
     overflow: hidden;
 }
@@ -141,17 +145,17 @@ h2 {
 /* Animation des vagues */
 @keyframes animate {
     0%, 100% {
-        transform : translateY(0px);
+        transform: translateY(0px);
     }
     50% {
-        transform : translateY(10px);
+        transform: translateY(10px);
     }
 }
 
 /* Section suivante */
 #section1 {
     position: relative;
-    min-height: 70vh;
+    min-height: 80vh;
     padding: 100px 0;
     z-index: 3;
 }
@@ -190,7 +194,7 @@ h2 {
 }
 
 #wave-chart-sec {
-    min-height: 110vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -210,7 +214,7 @@ h2 {
 }
 
 #section3 {
-    min-height: 135vh;
+    min-height: 120vh;
 }
 
 #section3 .row .col-md-12 {
@@ -247,11 +251,27 @@ h2 {
     background-color: #ccd622;
 }
 
-#section4 {
-    min-height: 120vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.section4-bg {
+    width: 100%;
+    background: linear-gradient(to bottom, #CCE6E9 0%, rgba(0, 123, 255, 0) 100%);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.section4-bg {
+    transition: background 0.5s ease-in-out;
+}
+
+.panneau-img {
+    width: 140px;
+    height: 140px;
+    margin-right: 2rem;
+}
+
+.titre-francais {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
 #boussole-fergus {
@@ -261,6 +281,7 @@ h2 {
 #section4 .row {
     width: 100%;
     justify-content: center;
+    min-height: 2vh;
 }
 
 #section4 .card {
@@ -273,12 +294,23 @@ h2 {
 }
 
 #graphic {
-    min-height: 35vh;
+    min-height: 60vh;
     margin-top: 5vh;
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
+}
+
+#graphic p {
+    margin-bottom: 15vh;
+}
+
+#graphic-chart {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    margin: 0 auto;
 }
 
 #section5 {
@@ -389,13 +421,38 @@ h2 {
 /* =================== RESPONSIVE - MOBILE (≤576px) =================== */
 @media (max-width: 576px) {
     .header {
-        padding: 1rem;
-        flex-direction: column;
+        display: flex; /* <- ici */
+        flex-direction: row; /* passage en ligne */
         text-align: center;
+        padding: 1rem;
     }
 
     .header .h1 {
-        font-size: 12vw;
+        font-size: 5vw;
+    }
+
+    img.img-fluid {
+        max-width: 800px;
+        width: 100%;
+        height: auto;
+    }
+
+    .panneau-img {
+        width: 60px;
+        height: 60px;
+        margin-right: 0.75rem !important;
+    }
+
+    .titre-francais {
+        font-size: 1.25rem;
+    }
+
+    #globe {
+        max-width: 250px;
+    }
+
+    #graphic-chart {
+        height: 250px;
     }
 
     .welcoming h1 {
@@ -458,6 +515,8 @@ h2 {
 
     #wave-chart {
         width: 100%;
+        height: 50vh;
+        max-height: 400px;
         min-height: 250px;
     }
 
@@ -510,6 +569,16 @@ h2 {
 
     .header .h1 {
         font-size: 10vw;
+    }
+
+    img.img-fluid {
+        max-width: 800px;
+        width: 100%;
+        height: auto;
+    }
+
+    #graphic-chart {
+        height: 300px;
     }
 
     .intro-script {

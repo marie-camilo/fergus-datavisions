@@ -2,54 +2,44 @@ let targetRotationX = 0.05;
 let targetRotationY = 0.02;
 let mouseX = 0, mouseXOnMouseDown = 0, mouseY = 0, mouseYOnMouseDown = 0;
 let isMouseDown = false;
-const windowHalfX = window.innerWidth / 2;
-const windowHalfY = window.innerHeight / 2;
 const slowingFactor = 0.98;
 const dragFactor = 0.00005;
 
 function onDocumentMouseDown(event) {
     event.preventDefault();
-    isMouseDown = true; // La souris est enfoncée
+    isMouseDown = true;
     document.addEventListener('mousemove', onDocumentMouseMove, false);
     document.addEventListener('mouseup', onDocumentMouseUp, false);
-    mouseXOnMouseDown = event.clientX - windowHalfX;
-    mouseYOnMouseDown = event.clientY - windowHalfY;
+    mouseXOnMouseDown = event.clientX - window.innerWidth / 2;
+    mouseYOnMouseDown = event.clientY - window.innerHeight / 2;
 }
 
 function onDocumentMouseMove(event) {
-    mouseX = event.clientX - windowHalfX;
+    mouseX = event.clientX - window.innerWidth / 2;
     targetRotationX = (mouseX - mouseXOnMouseDown) * dragFactor;
-    mouseY = event.clientY - windowHalfY;
+    mouseY = event.clientY - window.innerHeight / 2;
     targetRotationY = (mouseY - mouseYOnMouseDown) * dragFactor;
 }
 
 function onDocumentMouseUp(event) {
-    isMouseDown = false; // La souris n'est plus enfoncée
+    isMouseDown = false;
     document.removeEventListener('mousemove', onDocumentMouseMove, false);
     document.removeEventListener('mouseup', onDocumentMouseUp, false);
 }
 
 function main() {
-    // Sélectionne le canvas
     const canvas = document.querySelector('#globe');
 
-    // Crée la scène
+    // Scène et renderer
     const scene = new THREE.Scene();
-
-    // Crée le renderer avec fond transparent
     const renderer = new THREE.WebGLRenderer({
         canvas: canvas,
-        alpha: true, // Permet de rendre le fond transparent
+        alpha: true,
+        antialias: true,
     });
-
-    // Définir une taille fixe correspondant à celle du style inline
-    const width = canvas.offsetWidth;
-    const height = 400;
-
-    renderer.setSize(width, height);
     renderer.setPixelRatio(window.devicePixelRatio);
 
-    // Crée le globe avec la texture en utilisant MeshStandardMaterial
+    // Globe
     const earthGeometry = new THREE.SphereGeometry(2.0, 32, 32);
     const earthMaterial = new THREE.MeshStandardMaterial({
         map: new THREE.TextureLoader().load('./img/mappemonde.png'),
@@ -59,31 +49,45 @@ function main() {
     const earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
     scene.add(earthMesh);
 
-    // Lumière ambiante forte (plus diffuse)
+    // Lumières
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
     scene.add(ambientLight);
-
-    // Lumière directionnelle douce
     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.4);
     directionalLight.position.set(5, 3, 5);
     scene.add(directionalLight);
 
-    // Caméra adaptée à la taille
-    const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
+    // Caméra
+    const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 1000);
     camera.position.z = 4;
 
-    // Fonction de rendu
+    // Fonction pour ajuster la taille du renderer et caméra selon le canvas affiché
+    function resizeRendererToDisplaySize() {
+        // On prend la taille affichée du canvas
+        const width = canvas.clientWidth;
+        // Fixe une hauteur égale à la largeur (ratio 1:1)
+        const height = width;
+
+        if (canvas.width !== width || canvas.height !== height) {
+            renderer.setSize(width, height, false);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+            return true;
+        }
+        return false;
+    }
+
+    // Rendu
     const render = () => {
-        // Si la souris est enfoncée, ne pas appliquer la rotation automatique
+        // Ajuste la taille avant chaque rendu
+        resizeRendererToDisplaySize();
+
         if (!isMouseDown) {
-            // Rotation automatique (plus lente)
             earthMesh.rotateOnWorldAxis(new THREE.Vector3(0, 1, 0), 0.0025);
             earthMesh.rotateOnWorldAxis(new THREE.Vector3(1, 0, 0), 0.001);
         }
-
-        // Rotation basée sur la souris
         earthMesh.rotateOnWorldAxis(new THREE.Vector3(0, 1, 0), targetRotationX);
         earthMesh.rotateOnWorldAxis(new THREE.Vector3(1, 0, 0), targetRotationY);
+
         targetRotationY *= slowingFactor;
         targetRotationX *= slowingFactor;
 
@@ -98,16 +102,12 @@ function main() {
 
     animate();
 
-    // Gestion des événements de la souris
+    // Évènements souris
     document.addEventListener('mousedown', onDocumentMouseDown, false);
 
-    // Gère le redimensionnement si nécessaire
+    // Aussi gestion du resize de la fenêtre (optionnel ici vu que c’est fait à chaque frame)
     window.addEventListener('resize', () => {
-        const newWidth = canvas.offsetWidth;
-        const newHeight = canvas.offsetHeight;
-        renderer.setSize(newWidth, newHeight);
-        camera.aspect = newWidth / newHeight;
-        camera.updateProjectionMatrix();
+        resizeRendererToDisplaySize();
     });
 }
 

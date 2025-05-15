@@ -58,4 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     graphic.setOption(option);
+
+    window.addEventListener('resize', () => {
+        graphic.resize();
+    });
 });
